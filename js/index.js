@@ -25,7 +25,6 @@ productos.push(procesador)
 let precioFinal = document.getElementById("productos");
 let li = document.createElement("li");
 switch (opcion) {
-    
     case 1:
         li.innerHTML = `<h2>Producto: ${mother.nombre}</h2>
                         <b>$${mother.precio}</b>
