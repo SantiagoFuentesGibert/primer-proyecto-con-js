@@ -1,3 +1,4 @@
+let opcion = parseInt(prompt("Eliga el numero del producto: 1-mother, 2-ram, 3-cooler y 4-procesador"));
 class Producto {
     constructor(nombre,precio,codigo){
         this.nombre = nombre
@@ -21,7 +22,6 @@ productos.push(mother)
 productos.push(ram)
 productos.push(cooler)
 productos.push(procesador)
-let opcion = parseInt(prompt("Eliga el numero del producto: 1-mother, 2-ram, 3-cooler y 4-procesador"));
 let precioFinal = document.getElementById("productos");
 let li = document.createElement("li");
 switch (opcion) {
