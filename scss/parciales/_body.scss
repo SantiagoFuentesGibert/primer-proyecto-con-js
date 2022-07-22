@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__fondo {
+    background-color: ghostwhite;
+    }
+
+    &__tipografia {
+    font-family: Oswald !important;
+    }
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url(../fuentes/Oswald-VariableFont_wght.ttf);
+}
+
+.carrito {
+    display: flex;
+    font-size: 52px;
+    background-color: ghostwhite;
+    border: none;
+}
+
+.carritoColor {
+    color: #ff9800 !important;
+}
+
+.carritoProductos {
+    border: none;
+    border-radius: 9px;
+    background-color: #ff9800;
+    width: 120px;
+    height: 52px;
+}
+
+.whatsapp {
+    display: flex;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    text-decoration: none;
+    font-size: 50px;
+    z-index: 100;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+    background-color: green;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.jam {
+    color: white;
+}

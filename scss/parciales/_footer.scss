@@ -1,0 +1,52 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.5rem;
+
+    &__informacion {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+    }
+
+    &__fondo {
+    background-color: #ff9800;
+    margin-top: auto;
+    }
+
+    &__logo {
+    border-radius: 4px;
+    }
+
+    &__letras {
+    font-size: 20px;
+    color: black;
+    font-weight: normal;
+    }
+}
+
+@mixin gastytech ($max-width, $max-height) {
+    max-width: $max-width;
+    max-width: $max-height;
+}
+
+.header__logo {
+    @include gastytech(50px, 200px)
+}
+
+.footer__logo {
+    @include gastytech(200px, 200px)
+}
+
+.p {
+    margin-bottom: 0;
+}
+
+.mapa {
+    max-width: 330px;
+    max-height: 330px;
+    margin: 10px 10px 10px 10px;
+}
