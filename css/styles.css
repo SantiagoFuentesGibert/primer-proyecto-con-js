@@ -18,12 +18,26 @@
 
 .carrito {
   display: flex;
-  font-size: 52px;
-  background-color: ghostwhite;
+  position: absolute;
+  right: 5px;
+  background-color: ghostwhite !important;
   border: none; }
 
-.carritoColor {
-  color: #ff9800 !important; }
+.carritoBtn {
+  background-color: ghostwhite !important;
+  border: none !important;
+  box-shadow: none !important; }
+
+.carritoBtn--size {
+  color: #ff9800 !important;
+  font-size: 52px; }
+
+.carritoProductos {
+  border: none;
+  border-radius: 9px;
+  background-color: #ff9800;
+  width: 120px;
+  height: 52px; }
 
 .agregar-carrito {
   border: none;
@@ -183,6 +197,9 @@
     font-size: 25px; }
   .productos__precios--destacados {
     font-size: 23px; }
+  .productos__info {
+    display: grid;
+    grid-template-rows: 45px 145px 53px; }
 
 .ofertas {
   display: flex;

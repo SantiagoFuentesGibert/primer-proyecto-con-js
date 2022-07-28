@@ -25,13 +25,21 @@
 
 .carrito {
     display: flex;
-    font-size: 52px;
-    background-color: ghostwhite;
+    position: absolute;
+    right: 5px;
+    background-color: ghostwhite !important;
     border: none;
 }
 
-.carritoColor {
+.carritoBtn {
+    background-color: ghostwhite !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.carritoBtn--size {
     color: #ff9800 !important;
+    font-size: 52px;
 }
 
 .carritoProductos {
@@ -40,6 +48,14 @@
     background-color: #ff9800;
     width: 120px;
     height: 52px;
+}
+
+.agregar-carrito {
+    border: none;
+    border-radius: 9px;
+    background-color: #ff9800;
+    width: 120px;
+    height: 52px; 
 }
 
 .whatsapp {

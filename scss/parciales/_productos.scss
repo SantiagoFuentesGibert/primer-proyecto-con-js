@@ -52,4 +52,9 @@
     &__precios--destacados {
     font-size: 23px;
     }
+
+    &__info {
+    display: grid;
+    grid-template-rows: 45px 145px 53px;
+    }
 }

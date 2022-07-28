@@ -24,6 +24,8 @@ function agregarProducto(e) {
         const productoSeleccionado = e.target.parentElement.parentElement;
         leerDatosProducto(productoSeleccionado);
     }
+
+    
 }
 
 function eliminarProducto(e) {
