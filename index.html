@@ -49,12 +49,19 @@
         <a class="whatsapp" href="https://wa.me/1XXXXXXXXXX"><span class="jam jam-whatsapp"></span></a>
     </header>
     <main>
-<!--         <section class="carrito-info">
-            <span class="carrito"><img class="jam jam-shopping-cart carritoColor" src="" alt=""></span>
-            <ul>
-                <li>
-                    <div id="carrito">
-                        <table id="lista-carrito">
+        <section class="carrito">
+            <button type="button" class="btn btn-primary carritoBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span ><img class="jam jam-shopping-cart carritoBtn--size" src="" alt=""></span>
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <div class="modal-body" id="carrito">
+                            <table id="lista-carrito">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -67,10 +74,15 @@
                         </table>
                         <a href="#" id="vaciar-carrito">Vaciar Carrito</a>
                     </div>
-                </li>
-            </ul>
-        </section> -->
-<!--         <div class="categoriasProductos">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="categoriasProductos">
             <section class="categorias">
                 <h1 class="categorias__titulo">Categorías</h1>
                 <ol class="categorias__style">
@@ -92,13 +104,13 @@
                     <li><a href="" class="categorias__text">Disco Sólido SSD</a></li>
                 </ol>
             </section>
-            <section class="lista-productos">
+            <section id="lista-productos" class="lista-productos">
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
                     <img src="../imagenes/INTEL.jpg" alt="Procesador i7 12700K" class="productos__img">
                     <div class="productos__info">
                         <h3 class="p productos__letras">Procesador Intel i7 12700K</h3>
                         <span class="productos__precios" >$65.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="1">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -106,7 +118,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Placa de video Gigabyte Vision RTX 3070 LHR</h3>
                         <span class="productos__precios" >$260.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="2">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -114,7 +126,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Water Cooling Aorus Waterforce X240</h3>
                         <span class="productos__precios" >$47.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="3">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -122,7 +134,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Gabinete Corsair 4000D AirFlow White</h3>
                         <span class="productos__precios" >$15.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="4">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -130,7 +142,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Monitor ViewSonic VX3268-2KPC-MHD 32 144hz 2K Curvo</h3>
                         <span class="productos__precios" >$90.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="5">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -138,7 +150,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Micrófono HyperX QuadCast</h3>
                         <span class="productos__precios" >$15.000</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="6">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -146,7 +158,7 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Auricular Razer BlackShark V2 X</h3>
                         <span class="productos__precios" >$7.500</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="7">Agregar al carrito</button>
                     </div>
                 </article>
                 <article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
@@ -154,17 +166,11 @@
                     <div class="productos__info">
                         <h3 class="p productos__letras">Mouse Pad HyperX Fury S XXL 900mm x 420mm</h3>
                         <span class="productos__precios" >$5.500</span>
-                        <button class="carritoProductos">Agregar al carrito</button>
+                        <button class="agregar-carrito" data-id="8">Agregar al carrito</button>
                     </div>
                 </article>
             </section>
-        </div> -->
-        <h1>Elija un producto</h1>
-        <button id="1" class="carritoProductos">Mother</button>
-        <button id="2" class="carritoProductos">Ram</button>
-        <button id="3" class="carritoProductos">Cooler</button>
-        <button id="4" class="carritoProductos">Procesador</button>
-        <ul id="productos"></ul>
+        </div>
 <!--         <section class="marcas">
             <img src="../imagenes/corsair-logo.png" alt="corsair logo" class="marcas__img">
             <img src="../imagenes/hyperx-logo.png" alt="hyperx logo" class="marcas__img">
