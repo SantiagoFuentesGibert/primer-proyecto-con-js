@@ -4,6 +4,9 @@ const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaProductos = document.querySelector('#lista-productos');
 let productosCarrito = [];
+// Local storage Carrito
+const saveProductosLocalStorage = [];
+const productosLocalStorage = []
 
 registrarEventListeners();
 function registrarEventListeners() {
@@ -24,8 +27,6 @@ function agregarProducto(e) {
         const productoSeleccionado = e.target.parentElement.parentElement;
         leerDatosProducto(productoSeleccionado);
     }
-
-    
 }
 
 function eliminarProducto(e) {
@@ -37,6 +38,7 @@ function eliminarProducto(e) {
     }
 }
 
+
 // Lee el contenido del HTML que clickeamos y extrae la info
 function leerDatosProducto(producto) {
     // Crear un objeto con el contenido del producto actual
@@ -46,6 +48,13 @@ function leerDatosProducto(producto) {
         id: producto.querySelector('button').getAttribute('data-id'),
         cantidad: 1
     }
+
+    //Guardando en el Local Storage 
+    saveProductosLocalStorage.push(infoProducto);
+    localStorage.setItem("infoProducto", JSON.stringify(saveProductosLocalStorage));
+
+    productosCarrito = JSON.parse(localStorage.getItem("infoProducto"));
+    console.log(productosCarrito);
 
     // Verifica si un elemento ya existe en el carrito
     const existeProducto = productosCarrito.some( producto => producto.id === infoProducto.id);
