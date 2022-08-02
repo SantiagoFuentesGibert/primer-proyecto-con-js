@@ -5,8 +5,8 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaProductos = document.querySelector('#lista-productos');
 let productosCarrito = [];
 // Local storage Carrito
-const saveProductosLocalStorage = [];
-const productosLocalStorage = []
+let saveProductosLocalStorage = [];
+let productosLocalStorage = [];
 
 registrarEventListeners();
 function registrarEventListeners() {
@@ -16,8 +16,15 @@ function registrarEventListeners() {
     carrito.addEventListener('click', eliminarProducto);
     // Vaciar el carrito
     vaciarCarritoBtn.addEventListener('click', () => {
-        productosCarrito = [];
-        limpiarHTML();
+        productosCarrito = []; // Reseteo del array
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'El carrito se vacío correctamente',
+            showConfirmButton: false,
+            timer: 1000
+        })
+        limpiarHTML(); // Elminamos todo el HTML
     })
 }
 
@@ -38,7 +45,6 @@ function eliminarProducto(e) {
     }
 }
 
-
 // Lee el contenido del HTML que clickeamos y extrae la info
 function leerDatosProducto(producto) {
     // Crear un objeto con el contenido del producto actual
@@ -49,16 +55,15 @@ function leerDatosProducto(producto) {
         cantidad: 1
     }
 
+    //RESOLVER PROBLEMA DE LOCAL STORAGE Y CARRITO CON ACTUALIZACION DE CANTIDAD
     //Guardando en el Local Storage 
     saveProductosLocalStorage.push(infoProducto);
     localStorage.setItem("infoProducto", JSON.stringify(saveProductosLocalStorage));
 
-    productosCarrito = JSON.parse(localStorage.getItem("infoProducto"));
-    console.log(productosCarrito);
+    productosLocalStorage = JSON.parse(localStorage.getItem("infoProducto"));
 
     // Verifica si un elemento ya existe en el carrito
     const existeProducto = productosCarrito.some( producto => producto.id === infoProducto.id);
-    console.log(existeProducto);
     if(existeProducto) {
         // Actualizamos la cantidad
         const productoMas = productosCarrito.map( producto => {
