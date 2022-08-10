@@ -42,12 +42,22 @@
     font-size: 52px;
 }
 
-.carritoProductos {
-    border: none;
-    border-radius: 9px;
-    background-color: #ff9800;
-    width: 120px;
-    height: 52px;
+/* .carritoInfo {
+    display: grid;
+    grid-template-columns: 270px 70px 60px 25px;
+}
+
+.carritoCantidad {
+    text-align: center;
+} */
+
+.carritoEliminar {
+    color: red;
+}
+
+.carritoVaciar {
+    text-decoration: none;
+    color: red;
 }
 
 .agregar-carrito {

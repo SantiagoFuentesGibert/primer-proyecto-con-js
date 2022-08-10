@@ -3,6 +3,26 @@ const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaProductos = document.querySelector('#lista-productos');
+// Creando listado de productos HTML
+const creandoProductos = async() => {
+    const response = await fetch("../data.json");
+    const productosCreados = await response.json();
+    productosCreados.forEach(producto => {
+        const {img, nombre, precio, button, id} = producto;
+        const article = document.createElement("article");
+        article.innerHTML = `<article class="productos__fondo productos__borde productos__letrasOrdenadas animaciones">
+                                <img src="${img}" class="productos__img"></img>
+                                <div class="productos__info">
+                                    <h3 class="p productos__letras">${nombre}</h3>
+                                    <span class="productos__precios">$${precio}</span>
+                                    <button class="agregar-carrito" data-id="${id}">${button}</button>
+                                </div>
+                            </article>
+                            `;
+        listaProductos.append(article);
+    })
+}
+creandoProductos();
 let productosCarrito = [];
 // Local storage Carrito
 let saveProductosLocalStorage = [];
@@ -38,7 +58,7 @@ function agregarProducto(e) {
 
 function eliminarProducto(e) {
     console.log(e.target.classList);
-    if(e.target.classList.contains('borrarProducto')) {
+    if(e.target.classList.contains('carritoEliminar')) {
         const productoId = e.target.getAttribute('data-id');
         productosCarrito = productosCarrito.filter( producto => producto.id !== productoId);
         carritoHTML();
@@ -55,14 +75,13 @@ function leerDatosProducto(producto) {
         cantidad: 1
     }
 
-    //RESOLVER PROBLEMA DE LOCAL STORAGE Y CARRITO CON ACTUALIZACION DE CANTIDAD
     //Guardando en el Local Storage 
     saveProductosLocalStorage.push(infoProducto);
     localStorage.setItem("infoProducto", JSON.stringify(saveProductosLocalStorage));
 
     productosLocalStorage = JSON.parse(localStorage.getItem("infoProducto"));
 
-    // Verifica si un elemento ya existe en el carrito
+    // Verifica si un elemento ya existe en el carrito para actualizar la cantidad
     const existeProducto = productosCarrito.some( producto => producto.id === infoProducto.id);
     if(existeProducto) {
         // Actualizamos la cantidad
@@ -96,7 +115,7 @@ function carritoHTML() {
                         <td>${precio}</td>
                         <td>${cantidad}</td>
                         <td>
-                            <a href="#" class="borrarProducto" data-id="${id}"> X </a>
+                            <a href="#" class="carritoEliminar" data-id="${id}"> X </a>
                         </td>
                         `;
         // Agrega el HTML del carrito en el tbody
