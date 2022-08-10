@@ -6,5 +6,5 @@
     { "img": "./imagenes/monitor-viewsonic.jpg", "nombre": "Monitor ViewSonic VX3268-2KPC-MHD 32 144hz 2K Curvo", "precio": "90.000", "button": "Agregar al carrito","id": 5},
     { "img": "./imagenes/mic-hyperx-quadcast.jpg", "nombre": "Micrófono HyperX QuadCast", "precio": "15.000", "button": "Agregar al carrito","id": 6},
     { "img": "./imagenes/auricular-razer-v2-x.jpg", "nombre": "Auricular Razer BlackShark V2 X", "precio": "7.500", "button": "Agregar al carrito","id": 7},
-    { "img": "./imagenes/mouse-pad-hyperx-xxl.jpg", "nombre": "Mouse Pad HyperX Fury S XXL 900mm x 420mm", "precio": "5.500", "button": "Agregar al carrito","id": 8}
+    { "img": "./imagenes/mouse-pad-hyperx-xxl.jpg", "nombre": "Mouse Pad HyperX Fury S XXL 900mm x 420mm", "precio": "5.700", "button": "Agregar al carrito","id": 8}
 ]
