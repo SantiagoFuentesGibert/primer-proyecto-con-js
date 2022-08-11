@@ -41,7 +41,8 @@
     text-align: center;
 } */
 .carritoEliminar {
-  color: red; }
+  color: red;
+  text-decoration: none; }
 
 .carritoVaciar {
   text-decoration: none;
