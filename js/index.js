@@ -5,7 +5,7 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaProductos = document.querySelector('#lista-productos');
 // Creando listado de productos HTML
 const creandoProductos = async() => {
-    const response = await fetch("../data.json");
+    const response = await fetch("./data.json");
     const productosCreados = await response.json();
     productosCreados.forEach(producto => {
         const {img, nombre, precio, button, id} = producto;
