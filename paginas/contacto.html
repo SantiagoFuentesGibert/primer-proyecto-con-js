@@ -6,36 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GastyTech es una tienda Online de venta de Hardware y Software, además contamos con un servicio de armado de PC si el cliente lo requiere">
     <meta name="keywords" content="GastyTech, Hardware, Software, Gaming, Venta, PC, GPU, CPU">
-    <title>GastyTech</title>
-    <link rel="short cut icon" href="./imagenes/gastytech.jpg">
+    <title>GastyTech | Contacto</title>
+    <link rel="short cut icon" href="../imagenes/gastytech.jpg">
     <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="body body__fondo body__tipografia">
     <header class="header header__fondo">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <img src="./imagenes/logo.png" alt="GastyTech" class="header__logo">
-                <a class="navbar-brand" href="index.html">INICIO</a>
+                <img src="../imagenes/logo.png" alt="GastyTech" class="header__logo">
+                <a class="navbar-brand" href="../index.html">INICIO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./paginas/productos.html">PRODUCTOS</a>
+                        <a class="nav-link active" aria-current="page" href="productos.html">PRODUCTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./paginas/ofertas.html">OFERTAS</a>
+                        <a class="nav-link" href="ofertas.html">OFERTAS</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         AYUDA
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./paginas/ayuda.html">PREGUNTAS FRECUENTES</a></li>
-                        <li><a class="dropdown-item" href="./paginas/contacto.html">CONTACTO</a></li>
+                        <li><a class="dropdown-item" href="ayuda.html">PREGUNTAS FRECUENTES</a></li>
+                        <li><a class="dropdown-item" href="contacto.html">CONTACTO</a></li>
                     </ul>
                     </li>
                 </ul>
@@ -49,51 +49,44 @@
         <a class="whatsapp" href="https://wa.me/1XXXXXXXXXX"><span class="jam jam-whatsapp"></span></a>
     </header>
     <main>
-        <h1 class="titulo">Productos Destacados</h1>
-        <section class="section__borde">
-            <div class="productos__destacados">
-                <div class="productos__borde productos__fondo--destacadoOfertas animaciones">
-                    <img src="./imagenes/ASUS.webp" alt="Placa de video RTX 3060" class="productos__img">
-                    <h2 class="p productos__letras--destacados">Placa de video Asus DUAL OC</h2>
-                    <h2 class="p productos__letras--destacados">RTX 3060 12GB</h2>
-                    <span class="productos__precios--destacados">$120.000</span>
+        <h1 class="contacto__titulo">Contacto</h1>
+        <section class="contacto">
+            <form action="" class="contacto__dimensiones">
+                <div class="contacto__orden">
+                    <label for="Nombre">Nombre completo</label>
+                    <input type="text" name="Nombre" id="Nombre" placeholder="Ingresar nombre completo" class="contacto__input">
                 </div>
-                <div class="productos__borde productos__fondo--destacadoOfertas animaciones">
-                    <img src="./imagenes/INTEL.jpg" alt="Procesador Intel i7 12700k" class="productos__img">
-                    <h2 class="p productos__letras--destacados">Procesador Intel i7 12700k</h2>
-                    <span class="productos__precios--destacados">$65.000</span>
+                <div class="contacto__orden">
+                    <label for="Correo">Email</label>
+                    <input type="email" name="Correo" id="Correo" placeholder="Ingresar correo" class="contacto__input">
                 </div>
-                <div class="productos__borde productos__fondo--destacadoOfertas animaciones">
-                    <img src="./imagenes/GIGA.jpg" alt="Mother Aorus Z690 Elite" class="productos__img">
-                    <h2 class="p productos__letras--destacados">Mother Aorus Z690 Elite</h2>
-                    <span class="productos__precios--destacados">$60.000</span>
+                <div class="contacto__orden">
+                    <label for="Consulta">Consulta</label>
+                    <textarea name="Consulta" id="Consulta" cols="30" rows="10" placeholder="Escribí tu consulta aquí" class="contacto__input"></textarea>
                 </div>
-                <div class="productos__borde productos__fondo--destacadoOfertas animaciones">
-                    <img src="./imagenes/corsair.png" alt="Memoria Ram Corsair Vengance 32GB DDR5" class="productos__img">
-                    <h2 class="p productos__letras--destacados">Memoria Ram Corsair Vengance</h2>
-                    <h2 class="p productos__letras--destacados">32GB 5200Mhz DDR5</h2>
-                    <span class="productos__precios--destacados">$50.000</span>
+                <div>    
+                    <input class="contacto__button animaciones__botones" type="submit" value="Enviar">
+                    <input class="contacto__button animaciones__botones" type="reset" value="Limpiar">
                 </div>
-            </div>
+            </form>
         </section>
         <section class="marcas">
-            <img src="./imagenes/corsair-logo.png" alt="corsair logo" class="marcas__img">
-            <img src="./imagenes/hyperx-logo.png" alt="hyperx logo" class="marcas__img">
-            <img src="./imagenes/razer-logo.webp" alt="razer logo" class="marcas__img">
-            <img src="./imagenes/nvidia-logo.png" alt="nvidia logo" class="marcas__img">
+            <img src="../imagenes/corsair-logo.png" alt="corsair logo" class="marcas__img">
+            <img src="../imagenes/hyperx-logo.png" alt="hyperx logo" class="marcas__img">
+            <img src="../imagenes/razer-logo.webp" alt="razer logo" class="marcas__img">
+            <img src="../imagenes/nvidia-logo.png" alt="nvidia logo" class="marcas__img">
         </section>
     </main>
     <footer class="footer footer__fondo">
-        <img src="./imagenes/gastytech.jpg" alt="GastyTech" class="footer__logo">
+        <img src="../imagenes/gastytech.jpg" alt="GastyTech" class="footer__logo">
         <div class="footer__informacion">
-        <p class="p footer__letras">TEL: (11) 1234-5678</p>
-        <p class="p footer__letras">GastyTech@gmail.com</p>
-        <p class="p footer__letras">Buenos Aires, Moreno, Calle Falsa 123</p>
-        <p class="p footer__letras">Lun. a Vie. de 10 a 17h.</p>
+            <p class="p footer__letras">TEL: (11) 1234-5678</p>
+            <p class="p footer__letras">GastyTech@gmail.com</p>
+            <p class="p footer__letras">Buenos Aires, Moreno, Calle Falsa 123</p>
+            <p class="p footer__letras">Lun. a Vie. de 10 a 17h.</p>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.263666641761!2d-58.79057508449262!3d-34.648043580448096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9453e4e0aae5%3A0x563eb12be214aed6!2sMerlo%2C%20B1744%20Moreno%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1649295626429!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
-</class=>
 </html>

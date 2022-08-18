@@ -24,9 +24,14 @@ const creandoProductos = async() => {
 }
 creandoProductos();
 let productosCarrito = [];
+
 // Local storage Carrito
-let saveProductosLocalStorage = [];
-let productosLocalStorage = [];
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('productosCarrito')){
+        productosCarrito = JSON.parse(localStorage.getItem('productosCarrito'))
+        carritoHTML()
+    }
+})
 
 registrarEventListeners();
 function registrarEventListeners() {
@@ -75,12 +80,6 @@ function leerDatosProducto(producto) {
         cantidad: 1
     }
 
-    //Guardando en el Local Storage 
-    saveProductosLocalStorage.push(infoProducto);
-    localStorage.setItem("infoProducto", JSON.stringify(saveProductosLocalStorage));
-
-    productosLocalStorage = JSON.parse(localStorage.getItem("infoProducto"));
-
     // Verifica si un elemento ya existe en el carrito para actualizar la cantidad
     const existeProducto = productosCarrito.some( producto => producto.id === infoProducto.id);
     if(existeProducto) {
@@ -120,6 +119,9 @@ function carritoHTML() {
                         `;
         // Agrega el HTML del carrito en el tbody
         contenedorCarrito.appendChild(row);
+        
+        // Renderizado de localStorage en el carrito
+        localStorage.setItem('productosCarrito', JSON.stringify(productosCarrito))
     });
 }
 
