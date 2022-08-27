@@ -1,4 +1,4 @@
-//Variables
+// Variables
 const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
@@ -40,20 +40,12 @@ function registrarEventListeners() {
     // Elimina productos del carrito
     carrito.addEventListener('click', eliminarProducto);
     // Vaciar el carrito
-    vaciarCarritoBtn.addEventListener('click', () => {
-        productosCarrito = []; // Reseteo del array
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El carrito se vacío correctamente',
-            showConfirmButton: false,
-            timer: 1000
-        })
-        limpiarHTML(); // Elminamos todo el HTML
-    })
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 }
 
-//Funciones
+// Funciones
+
+// Funcion para agregar productos al carrito
 function agregarProducto(e) {
     if( e.target.classList.contains('agregar-carrito')){
         const productoSeleccionado = e.target.parentElement.parentElement;
@@ -61,13 +53,33 @@ function agregarProducto(e) {
     }
 }
 
+// Funcion para eliminar productos con la X
 function eliminarProducto(e) {
-    console.log(e.target.classList);
     if(e.target.classList.contains('carritoEliminar')) {
+        if (productosCarrito.length >=1) {
+            localStorage.clear();
+        }
         const productoId = e.target.getAttribute('data-id');
         productosCarrito = productosCarrito.filter( producto => producto.id !== productoId);
         carritoHTML();
     }
+}
+
+// Funcion para vaciar el carrito
+function vaciarCarrito() {
+    // Reseteo del localStorage
+    if (productosCarrito.length >=1) {
+        localStorage.clear();
+    }
+    productosCarrito = []; // Reseteo del array
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'El carrito se vacío correctamente',
+        showConfirmButton: false,
+        timer: 1000
+    })
+    limpiarHTML(); // Elminamos todo el HTML
 }
 
 // Lee el contenido del HTML que clickeamos y extrae la info
